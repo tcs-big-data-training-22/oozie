@@ -23,7 +23,11 @@ hadoop fs -mkdir /user/$USER/oozie
 hadoop fs -rm -r /user/$USER/oozie/MapReduce
 hadoop fs -mkdir /user/$USER/oozie/MapReduce
 hadoop fs -put workflow.xml /user/$USER/oozie/MapReduce
-hadoop fs -put *.py /user/$USER/oozie/MapReduce
+hadoop fs -put input-data /user/$USER/oozie/MapReduce/input-data
+hadoop fs -put lib /user/$USER/oozie/MapReduce/lib
+hadoop fs -ls /user/$USER/oozie/MapReduce/
+hadoop fs -ls /user/$USER/oozie/MapReduce/input-data
+hadoop fs -ls /user/$USER/oozie/MapReduce/lib
 hadoop fs -chmod 777 /user/$USER/oozie/MapReduce/*
 hadoop fs -ls /user/$USER/oozie/MapReduce
 ```

@@ -15,14 +15,14 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<workflow-app xmlns="uri:oozie:workflow:0.2" name="map-reduce-wf">
+<workflow-app xmlns="uri:oozie:workflow:0.2" name="MapReduce-wf">
     <start to="mr-node"/>
     <action name="mr-node">
-        <map-reduce>
+        <MapReduce>
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>
             <prepare>
-                <delete path="${nameNode}/user/${wf:user()}/${oozieRoot}/map-reduce/output-data"/>
+                <delete path="${nameNode}/user/${wf:user()}/${oozieRoot}/MapReduce/output-data"/>
             </prepare>
             <configuration>
                 <property>
@@ -43,14 +43,14 @@
                 </property>
                 <property>
                     <name>mapred.input.dir</name>
-                    <value>/user/${wf:user()}/${oozieRoot}/map-reduce/input-data</value>
+                    <value>/user/${wf:user()}/${oozieRoot}/MapReduce/input-data</value>
                 </property>
                 <property>
                     <name>mapred.output.dir</name>
-                    <value>/user/${wf:user()}/${oozieRoot}/map-reduce/output-data</value>
+                    <value>/user/${wf:user()}/${oozieRoot}/MapReduce/output-data</value>
                 </property>
             </configuration>
-        </map-reduce>
+        </MapReduce>
         <ok to="end"/>
         <error to="fail"/>
     </action>
