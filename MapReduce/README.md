@@ -45,6 +45,9 @@ telnet 10.0.0.14 8050
 ```
 
 - Change job.properties to replace localhost with the correct ip address and port number for nameNode
+```
+nano job.properties
+```
 
 - Change job.properties to replace localhost with the correct ip address and port number for jobTracker
 

@@ -15,10 +15,10 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<workflow-app xmlns="uri:oozie:workflow:0.2" name="MapReduce-wf">
+<workflow-app xmlns="uri:oozie:workflow:0.2" name="map-reduce-wf">
     <start to="mr-node"/>
     <action name="mr-node">
-        <MapReduce>
+        <map-reduce>
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>
             <prepare>
@@ -50,7 +50,7 @@
                     <value>/user/${wf:user()}/${oozieRoot}/MapReduce/output-data</value>
                 </property>
             </configuration>
-        </MapReduce>
+        </map-reduce>
         <ok to="end"/>
         <error to="fail"/>
     </action>
