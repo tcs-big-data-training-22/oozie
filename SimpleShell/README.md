@@ -18,14 +18,14 @@ ssh u20@localhost
 ```
 cd
 git clone https://github.com/tcs-big-data-training-22/oozie
-cd ~/oozie/PythonShell
+cd ~/oozie/SimpleShell
 hadoop fs -mkdir /user/$USER/oozie
-hadoop fs -rm -r /user/$USER/oozie/python-shell
-hadoop fs -mkdir /user/$USER/oozie/python-shell
-hadoop fs -put workflow.xml /user/$USER/oozie/python-shell
-hadoop fs -put *.py /user/$USER/oozie/python-shell
-hadoop fs -chmod 777 /user/$USER/oozie/python-shell/*
-hadoop fs -ls /user/$USER/oozie/python-shell
+hadoop fs -rm -r /user/$USER/oozie/SimpleShell
+hadoop fs -mkdir /user/$USER/oozie/SimpleShell
+hadoop fs -put workflow.xml /user/$USER/oozie/SimpleShell
+hadoop fs -put *.py /user/$USER/oozie/SimpleShell
+hadoop fs -chmod 777 /user/$USER/oozie/SimpleShell/*
+hadoop fs -ls /user/$USER/oozie/SimpleShell
 ```
 
 - Validating a Workflow XML −
@@ -50,7 +50,7 @@ telnet 10.0.0.14 8050
 ```
 nameNode=hdfs://localhost:8020
 jobTracker=localhost:8050
-oozie.wf.application.path=/user/${user.name}/${oozieRoot}/python-shell
+oozie.wf.application.path=/user/${user.name}/${oozieRoot}/SimpleShell
 ```
 
 - Running Workflow
