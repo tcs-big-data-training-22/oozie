@@ -18,7 +18,7 @@ ssh u20@localhost
 ```
 cd
 git clone https://github.com/tcs-big-data-training-22/oozie
-cd ~/oozie/map-reduce
+cd ~/oozie/MapReduce
 hadoop fs -mkdir /user/$USER/oozie
 hadoop fs -rm -r /user/$USER/oozie/map-reduce
 hadoop fs -mkdir /user/$USER/oozie/map-reduce
