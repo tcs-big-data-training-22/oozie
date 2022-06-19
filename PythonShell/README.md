@@ -33,6 +33,25 @@ hadoop fs -ls /user/$USER/oozie/python-shell
 oozie validate workflow.xml
 ```
 
+- Check the port number at which NameNode is listening
+```
+ifconfig
+telnet 10.0.0.13 8020
+telnet 10.0.0.14 8050
+```
+
+- Change job.properties to replace localhost with the correct ip address and port number for nameNode
+
+- Change job.properties to replace localhost with the correct ip address and port number for jobTracker
+
+- If required change the value of oozie.wf.application.path
+
+- Finally, these 3 values will look something like below:
+```
+nameNode=hdfs://localhost:8020
+jobTracker=localhost:8050
+oozie.wf.application.path=/user/${user.name}/${oozieRoot}/python-shell
+```
 
 - Running Workflow
 ```
