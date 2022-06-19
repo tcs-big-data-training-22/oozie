@@ -40,8 +40,8 @@ oozie validate workflow.xml
 - Check the port number at which NameNode is listening
 ```
 ifconfig
-telnet 10.0.0.13 8020
-telnet 10.0.0.14 8032
+telnet sandbox-hdp.hortonworks.com 8020
+telnet sandbox-hdp.hortonworks.com 8032
 ```
 
 - If required change the value of oozie.wf.application.path
@@ -66,3 +66,9 @@ oozie job -log 0049130-161020154537822-oozie-oozi-C
 
 - See running workflows
 oozie jobs -jobtype=WF -filter status=RUNNING
+
+
+- Open UI and view oozie job details:
+	- Refer: http://vmhadoop.eastus2.cloudapp.azure.com:8088/cluster
+	- Refer: http://vmhadoop.eastus2.cloudapp.azure.com:8080/#/main/views/WORKFLOW_MANAGER/1.0.0/WORKFLOW_MANAGER_INSTANCE
+	
