@@ -6,12 +6,12 @@ oozie version
 - To check the status of the Oozie system
 ```
 ifconfig
-oozie admin -oozie http://localhost:11000/oozie -status
+oozie admin -oozie http://sandbox-hdp.hortonworks.com:11000/oozie -status
 ```
 
 - Switch User
 ```
-ssh u20@localhost
+ssh u20@sandbox-hdp.hortonworks.com
 ```
 
 - Put Oozie files to HDFS
@@ -41,29 +41,22 @@ oozie validate workflow.xml
 ```
 ifconfig
 telnet 10.0.0.13 8020
-telnet 10.0.0.14 8050
+telnet 10.0.0.14 8032
 ```
-
-- Change job.properties to replace localhost with the correct ip address and port number for nameNode
-```
-nano job.properties
-```
-
-- Change job.properties to replace localhost with the correct ip address and port number for jobTracker
 
 - If required change the value of oozie.wf.application.path
 
 - Finally, these 3 values will look something like below:
 ```
-nameNode=hdfs://10.0.0.13:8020
-jobTracker=10.0.0.14:8050
+nameNode=hdfs://sandbox-hdp.hortonworks.com:8020
+jobTracker=sandbox-hdp.hortonworks.com:8032
 oozie.wf.application.path=/user/${user.name}/${oozieRoot}/map-reduce
 ```
 
 - Running Workflow
 ```
 ifconfig
-export OOZIE_URL=http://localhost:11000/oozie
+export OOZIE_URL=http://sandbox-hdp.hortonworks.com:11000/oozie
 oozie job -config job.properties -run
 ```
 
