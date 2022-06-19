@@ -23,7 +23,6 @@ hadoop fs -mkdir /user/$USER/oozie
 hadoop fs -rm -r /user/$USER/oozie/SimpleShell
 hadoop fs -mkdir /user/$USER/oozie/SimpleShell
 hadoop fs -put workflow.xml /user/$USER/oozie/SimpleShell
-hadoop fs -put *.py /user/$USER/oozie/SimpleShell
 hadoop fs -chmod 777 /user/$USER/oozie/SimpleShell/*
 hadoop fs -ls /user/$USER/oozie/SimpleShell
 ```
@@ -41,6 +40,9 @@ telnet 10.0.0.14 8050
 ```
 
 - Change job.properties to replace localhost with the correct ip address and port number for nameNode
+```
+nano job.properties
+```
 
 - Change job.properties to replace localhost with the correct ip address and port number for jobTracker
 
@@ -48,8 +50,8 @@ telnet 10.0.0.14 8050
 
 - Finally, these 3 values will look something like below:
 ```
-nameNode=hdfs://localhost:8020
-jobTracker=localhost:8050
+nameNode=hdfs://10.0.0.13:8020
+jobTracker=10.0.0.14:8050
 oozie.wf.application.path=/user/${user.name}/${oozieRoot}/SimpleShell
 ```
 

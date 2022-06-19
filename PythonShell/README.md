@@ -48,8 +48,8 @@ telnet 10.0.0.14 8050
 
 - Finally, these 3 values will look something like below:
 ```
-nameNode=hdfs://localhost:8020
-jobTracker=localhost:8050
+nameNode=hdfs://10.0.0.13:8020
+jobTracker=10.0.0.14:8050
 oozie.wf.application.path=/user/${user.name}/${oozieRoot}/python-shell
 ```
 
