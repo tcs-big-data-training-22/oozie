@@ -22,7 +22,7 @@
             <job-tracker>${jobTracker}</job-tracker>
             <name-node>${nameNode}</name-node>
             <prepare>
-                <delete path="${nameNode}/user/${wf:user()}/${oozieRoot}/MapReduce/output-data"/>
+                <delete path="${nameNode}/user/${wf:user()}/${oozieRoot}/map-reduce/output-data"/>
             </prepare>
             <configuration>
                 <property>
@@ -43,11 +43,11 @@
                 </property>
                 <property>
                     <name>mapred.input.dir</name>
-                    <value>/user/${wf:user()}/${oozieRoot}/MapReduce/input-data</value>
+                    <value>/user/${wf:user()}/${oozieRoot}/map-reduce/input-data</value>
                 </property>
                 <property>
                     <name>mapred.output.dir</name>
-                    <value>/user/${wf:user()}/${oozieRoot}/MapReduce/output-data</value>
+                    <value>/user/${wf:user()}/${oozieRoot}/map-reduce/output-data</value>
                 </property>
             </configuration>
         </map-reduce>

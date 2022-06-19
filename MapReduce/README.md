@@ -18,18 +18,18 @@ ssh u20@localhost
 ```
 cd
 git clone https://github.com/tcs-big-data-training-22/oozie
-cd ~/oozie/MapReduce
+cd ~/oozie/map-reduce
 hadoop fs -mkdir /user/$USER/oozie
-hadoop fs -rm -r /user/$USER/oozie/MapReduce
-hadoop fs -mkdir /user/$USER/oozie/MapReduce
-hadoop fs -put workflow.xml /user/$USER/oozie/MapReduce
-hadoop fs -put input-data /user/$USER/oozie/MapReduce/input-data
-hadoop fs -put lib /user/$USER/oozie/MapReduce/lib
-hadoop fs -ls /user/$USER/oozie/MapReduce/
-hadoop fs -ls /user/$USER/oozie/MapReduce/input-data
-hadoop fs -ls /user/$USER/oozie/MapReduce/lib
-hadoop fs -chmod 777 /user/$USER/oozie/MapReduce/*
-hadoop fs -ls /user/$USER/oozie/MapReduce
+hadoop fs -rm -r /user/$USER/oozie/map-reduce
+hadoop fs -mkdir /user/$USER/oozie/map-reduce
+hadoop fs -put workflow.xml /user/$USER/oozie/map-reduce
+hadoop fs -put input-data /user/$USER/oozie/map-reduce/input-data
+hadoop fs -put lib /user/$USER/oozie/map-reduce/lib
+hadoop fs -ls /user/$USER/oozie/map-reduce/
+hadoop fs -ls /user/$USER/oozie/map-reduce/input-data
+hadoop fs -ls /user/$USER/oozie/map-reduce/lib
+hadoop fs -chmod 777 /user/$USER/oozie/map-reduce/*
+hadoop fs -ls /user/$USER/oozie/map-reduce
 ```
 
 - Validating a Workflow XML −
@@ -57,7 +57,7 @@ nano job.properties
 ```
 nameNode=hdfs://10.0.0.13:8020
 jobTracker=10.0.0.14:8050
-oozie.wf.application.path=/user/${user.name}/${oozieRoot}/MapReduce
+oozie.wf.application.path=/user/${user.name}/${oozieRoot}/map-reduce
 ```
 
 - Running Workflow
