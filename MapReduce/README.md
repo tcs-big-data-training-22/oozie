@@ -69,6 +69,7 @@ oozie job -config job.properties -run
 
 - Info about your job
 oozie job -info 0049130-161020154537822-oozie-oozi-C
+oozie job -log 0049130-161020154537822-oozie-oozi-C
 
 - See running workflows
 oozie jobs -jobtype=WF -filter status=RUNNING
